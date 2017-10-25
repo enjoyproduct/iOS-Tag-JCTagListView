@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tXg-JF-3Hi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2Ce-oQ-VPd">
+            <objects>
+                <navigationController id="tXg-JF-3Hi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U5Y-Jy-mcc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="LTY-Yc-OXT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVc-m7-Nza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-573" y="453"/>
+        </scene>
+        <!--JCTagListView-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="JCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-gg-734" customClass="JCTagListView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="UNz-gg-734" secondAttribute="bottom" id="KeM-3L-LHZ"/>
+                            <constraint firstAttribute="trailing" secondItem="UNz-gg-734" secondAttribute="trailing" id="cic-xm-XXX"/>
+                            <constraint firstItem="UNz-gg-734" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="cl4-gn-cyJ"/>
+                            <constraint firstItem="UNz-gg-734" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="zvD-iB-gB3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="JCTagListView" id="cMv-9O-1me">
+                        <barButtonItem key="leftBarButtonItem" title="cell" id="D0C-wD-RMT">
+                            <connections>
+                                <action selector="openTableViewController:" destination="whP-gf-Uak" id="OQC-q1-Fjw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="delete" id="GSW-Id-tuZ">
+                            <connections>
+                                <action selector="delete:" destination="whP-gf-Uak" id="izx-oK-L7N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tagListView" destination="UNz-gg-734" id="81B-2x-LV8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="453"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ic0-WD-tho">
+            <objects>
+                <tableViewController storyboardIdentifier="JCTableViewController" id="U23-N7-vNa" customClass="JCTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LZ2-Cs-KP5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.39607843139999999" green="0.61568627450000002" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" id="hch-gG-zQZ" customClass="JCTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hch-gG-zQZ" id="Ycz-5p-rBR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwo-Ua-FJX" customClass="JCTagListView">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Fwo-Ua-FJX" secondAttribute="trailing" id="AVS-mB-L0o"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fwo-Ua-FJX" secondAttribute="bottom" constant="0.5" id="Fbu-iH-3G5"/>
+                                        <constraint firstItem="Fwo-Ua-FJX" firstAttribute="leading" secondItem="Ycz-5p-rBR" secondAttribute="leading" id="ayy-EO-opd"/>
+                                        <constraint firstItem="Fwo-Ua-FJX" firstAttribute="top" secondItem="Ycz-5p-rBR" secondAttribute="top" id="k8M-ew-oGw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="tagListView" destination="Fwo-Ua-FJX" id="2Ih-pM-2pJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U23-N7-vNa" id="ZIu-W2-6pj"/>
+                            <outlet property="delegate" destination="U23-N7-vNa" id="oN8-2w-ev7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ngm-sW-PFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="453"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="delete" width="24" height="24"/>
+    </resources>
+</document>
